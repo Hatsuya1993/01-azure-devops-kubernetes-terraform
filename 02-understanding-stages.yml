@@ -5,29 +5,29 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
--stage: Build
+- stage: Build
   jobs:
-  -jobs: FirstJob
-   steps:
-   - bash: echo Build FirstJob
-  -jobs: SecondJob
-   steps:
-   - bash: echo Build SecondJob
--stage: DevDeploy
+  - job: FirstJob
+    steps:
+    - bash: echo Build FirstJob
+  - job: SecondJob
+    steps:
+    - bash: echo Build SecondJob
+- stage: DevDeploy
   jobs:
-  -jobs: DevDeployJob
-   steps:
-   - bash: echo Build DevDeployJob
--stage: QaDeploy
+  - job: DevDeployJob
+    steps:
+    - bash: echo Build DevDeployJob
+- stage: QaDeploy
   jobs:
-  -jobs: QaDeployJob
-   steps:
-   - bash: echo Build QaDeployJob
--stage: ProdDeploy
+  - job: QaDeployJob
+    steps:
+    - bash: echo Build QaDeployJob
+- stage: ProdDeploy
   jobs:
-  -jobs: ProdDeployJob
-   steps:
-   - bash: echo Build ProdDeployJob
+  - job: ProdDeployJob
+    steps:
+    - bash: echo Build ProdDeployJob
 
 steps:
 - script: echo Job1 Step1!
