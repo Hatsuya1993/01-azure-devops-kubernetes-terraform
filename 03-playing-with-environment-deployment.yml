@@ -8,8 +8,8 @@ trigger:
 #     mac:
 #       operatingSystem: 'macos-latest'
 
-pool:
-  vmImage: $(operatingSystem)
+# pool:
+#   vmImage: $(operatingSystem)
 
 stages:
 - stage: Build
