@@ -22,7 +22,7 @@ stages:
   - deployment: DevDeployJob
     environment: Dev
     strategy:
-      runonce:
+      runOnce:
         deploy:
           steps:
           - script: echo deploy to Dev
@@ -31,12 +31,8 @@ stages:
   - deployment: DevDeployJob
     environment: Dev
     strategy:
-      runonce:
+      runOnce:
         deploy:
           steps:
           - script: echo deploy to Dev
-
-steps:
-- script: echo Running on $(operatingSystem)
-  displayName: 'Run a one-line script'
 
